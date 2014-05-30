@@ -5,6 +5,8 @@ $(document).ready(function(){
     var navActive = $('nav').data('active');
     $('#'+navActive+'-nav').addClass('active');
 
+    $('.unentered').toggleClass('unentered');
+
   }
 
   init();

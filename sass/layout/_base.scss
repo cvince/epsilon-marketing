@@ -24,10 +24,10 @@ body {
 
 .animation-1s {
   -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transition: all 1s linear;
-        -moz-transition: all 1s linear;
-        -o-transition: all 1s linear;
-        transition: all 1s linear;
+  -webkit-transition: all 1s ease-out;
+        -moz-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
+        transition: all 1s ease-out;
 }
 
 /* clearfixes are oldschool */
@@ -37,6 +37,11 @@ body {
 
 #host.client .host-show {
   display: none;
+}
+
+.float-gutter{
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 @font-face {
@@ -72,4 +77,10 @@ body {
 }
 .icon-a:before {
   content: "\e602";
+}
+
+@media (max-width: 767px) {
+  .float-gutter{
+    padding: 0;
+  }
 }

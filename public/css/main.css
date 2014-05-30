@@ -87,12 +87,12 @@ body {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out; }
 
-.animation-1s {
+.animation-1s, section.hero .demo {
   -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -o-transition: all 1s linear;
-  transition: all 1s linear; }
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out; }
 
 /* clearfixes are oldschool */
 .line:before, .line:after {
@@ -110,6 +110,10 @@ body {
 
 #host.client .host-show {
   display: none; }
+
+.float-gutter {
+  padding-right: 15px;
+  padding-left: 15px; }
 
 @font-face {
   font-family: 'epsilon-icofonts';
@@ -138,6 +142,9 @@ body {
 .icon-a:before {
   content: "\e602"; }
 
+@media (max-width: 767px) {
+  .float-gutter {
+    padding: 0; } }
 /*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -1052,15 +1059,20 @@ hr {
   .col-lg-offset-0 {
     margin-left: 0%; } }
 #global-header {
-  padding: 2rem 0; }
+  padding: 2rem 0;
+  overflow: hidden; }
+
+#logo > img {
+  width: 2rem; }
 
 nav {
-  padding: 0.5rem 0; }
+  padding: 0.5rem 0;
+  text-align: right; }
 
 nav > ul > li {
   display: inline-block;
-  margin-left: 2rem;
-  padding: 0.25em; }
+  padding: 0.3em 0;
+  margin: 0 0.3em 0 2.3em; }
   nav > ul > li a, nav > ul > li a:hover {
     color: white;
     font-weight: 300;
@@ -1070,12 +1082,30 @@ nav > ul > li {
   nav > ul > li.active, nav > ul > li:hover {
     border-bottom: 1px solid #fff; }
   nav > ul > li.outline {
+    margin: 0;
+    margin-left: 2em;
+    padding: 0.3em;
     border: 1px solid #fff; }
+    nav > ul > li.outline a {
+      font-weight: 500; }
     nav > ul > li.outline:hover {
       background: rgba(255, 255, 255, 0.25); }
 
 section.hero {
   overflow: hidden; }
+  section.hero .hero-content {
+    float: right;
+    color: white;
+    margin-top: 2em; }
+  section.hero h1 {
+    font-size: 2rem;
+    font-weight: 100; }
+  section.hero hr {
+    border: 1px solid rgba(255, 255, 255, 0.25); }
+  section.hero p {
+    line-height: 1.5em;
+    font-size: 1.2em;
+    font-weight: 300; }
   #jukebox section.hero {
     background: #29a5dc;
     /* Old browsers */
@@ -1093,3 +1123,35 @@ section.hero {
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#29a5dc', endColorstr='#0071b6',GradientType=0 );
     /* IE6-9 */ }
+  section.hero .demo-wrapper {
+    overflow: hidden;
+    padding-top: 3em; }
+  section.hero .demo.unentered {
+    -ms-transform: translate(0, 300px);
+    /* IE 9 */
+    -webkit-transform: translate(0, 300px);
+    /* Chrome, Safari, Opera */
+    transform: translate(0, -100px);
+    opacity: 0; }
+  section.hero .demo {
+    max-width: 100%;
+    box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3); }
+
+/*responsive*/
+@media (max-width: 767px) {
+  #logo, .demo-wrapper, nav {
+    text-align: center; }
+
+  nav > ul > li {
+    margin: 1em; }
+    nav > ul > li.outline {
+      margin: 1em; }
+
+  #logo {
+    padding-bottom: 1em; }
+
+  .demo-wrapper {
+    float: right; }
+
+  .hero-content {
+    position: absolute; } }

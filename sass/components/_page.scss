@@ -1,16 +1,22 @@
 
 #global-header{
   padding: 2rem 0;
+  overflow: hidden;
+}
+
+#logo>img{
+  width: 2rem;
 }
 
 nav{
   padding: 0.5rem 0;
+  text-align: right;
 }
 
 nav>ul>li{
   display: inline-block;
-  margin-left: 2rem;
-  padding: 0.25em;
+  padding: 0.3em 0;
+  margin: 0 0.3em 0 2.3em;
 
 
   a, a:hover{
@@ -26,7 +32,14 @@ nav>ul>li{
   }
 
   &.outline{
+    margin: 0;
+    margin-left: 2em;
+    padding: 0.3em;
     border: 1px solid #fff;
+
+    a{
+      font-weight: 500;
+    }
 
     &:hover{
       background: rgba(255,255,255,0.25);
@@ -40,6 +53,27 @@ nav>ul>li{
 section.hero {
 
   overflow: hidden;
+
+  .hero-content{
+    float: right;
+    color: $nav;
+    margin-top: 2em;
+  }
+
+  h1{
+    font-size: 2rem;
+    font-weight: 100;
+  }
+
+  hr{
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  p{
+    line-height: 1.5em;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
 
   #jukebox &{
   background: #29a5dc; /* Old browsers */
@@ -56,5 +90,52 @@ section.hero {
 
   }
 
+  .demo-wrapper{
+    overflow: hidden;
+    padding-top: 3em;
+  }
+
+
+  .demo.unentered{
+    -ms-transform: translate(0,300px); /* IE 9 */
+    -webkit-transform: translate(0,300px); /* Chrome, Safari, Opera */
+    transform: translate(0,-100px);
+    opacity: 0;
+  }
+
+  .demo{
+    max-width: 100%;
+    box-shadow: 0 0 30px 0px rgba(0,0,0,0.30);
+    @extend .animation-1s;
+  }
+
+}
+
+/*responsive*/
+
+@media (max-width: 767px) {
+  #logo, .demo-wrapper, nav{
+     text-align: center;
+  }
+
+  nav>ul>li{
+    margin: 1em;
+
+    &.outline{
+      margin: 1em;
+    }
+  }
+
+  #logo {
+    padding-bottom: 1em;
+  }
+
+  .demo-wrapper{
+    float: right;
+  }
+
+  .hero-content {
+    position: absolute;
+  }
 }
 
