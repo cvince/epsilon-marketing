@@ -1,0 +1,75 @@
+$blue-accent: #0099FF;
+$orange-accent: #ff9900;
+
+$base-translucent: rgba(0,0,0,0.25);
+$base-translucent-stronger: rgba(51,51,51,0.9);
+
+$base-text: #666;
+$base-text-focus: #fff;
+
+$nav: #fff;
+
+body {
+  background: white;
+  color: #999;
+}
+
+.animation {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+}
+
+.animation-1s {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -o-transition: all 1s linear;
+        transition: all 1s linear;
+}
+
+/* clearfixes are oldschool */
+.line:before,.line:after{height:0; line-height:0; overflow:hidden;content:"";display:table;}
+.line:after{clear:both;}
+.line{*zoom:1;}
+
+#host.client .host-show {
+  display: none;
+}
+
+@font-face {
+  font-family: 'epsilon-icofonts';
+  src:url('../fonts/epsilon-icofonts.eot?-rgflj8');
+  src:url('../fonts/epsilon-icofonts.eot?#iefix-rgflj8') format('embedded-opentype'),
+    url('../fonts/epsilon-icofonts.woff?-rgflj8') format('woff'),
+    url('../fonts/epsilon-icofonts.ttf?-rgflj8') format('truetype'),
+    url('../fonts/epsilon-icofonts.svg?-rgflj8#epsilon-icofonts') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'epsilon-icofonts';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-m:before {
+  content: "\e601";
+}
+.icon-p:before {
+  content: "\e600";
+}
+.icon-a:before {
+  content: "\e602";
+}
