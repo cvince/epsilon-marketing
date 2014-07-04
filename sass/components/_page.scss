@@ -49,15 +49,43 @@ nav>ul>li{
 
 }
 
-
 section.hero {
 
   overflow: hidden;
+
+  #play & {
+    overflow: visible;
+  }
+
+  .hero-content-wrapper{
+    float: right;
+
+    #play & {
+      color: #fff;
+      hr{
+        max-width: 20em;
+      }
+
+      p{
+        font-size: 1.3em;
+        margin-bottom: 1em;
+      }
+    }
+  }
 
   .hero-content{
     float: right;
     color: $nav;
     margin-top: 2em;
+    padding-bottom: 2em;
+
+    p{
+      margin-bottom: 2em;
+    }
+
+    #play & {
+      float: left;
+    }
   }
 
   h1{
@@ -76,42 +104,246 @@ section.hero {
   }
 
   #jukebox &{
-  background: #29a5dc; /* Old browsers */
-  background: -moz-linear-gradient(top,  #29a5dc 0%, #0071b6 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#29a5dc), color-stop(100%,#0071b6)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #29a5dc 0%,#0071b6 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #29a5dc 0%,#0071b6 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #29a5dc 0%,#0071b6 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #29a5dc 0%,#0071b6 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29a5dc', endColorstr='#0071b6',GradientType=0 ); /* IE6-9 */
+    background: #29a5dc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #29a5dc 0%, #0071b6 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#29a5dc), color-stop(100%,#0071b6)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #29a5dc 0%,#0071b6 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #29a5dc 0%,#0071b6 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #29a5dc 0%,#0071b6 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #29a5dc 0%,#0071b6 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29a5dc', endColorstr='#0071b6',GradientType=0 ); /* IE6-9 */
   }
 
   #play &{
+    background: url('/img/play_hero-bg.jpg') 50% no-repeat fixed;
+    background-size: cover;
+  }
 
+  .label{
+    font-size: 0.6em;
+    text-transform: uppercase;
+    margin: 2em 0 1em 0;
+  }
+
+  .store-icons{
+    img{
+      max-height: 2.3em;
+      margin-right: 0.5em;
+    }
   }
 
   .demo-wrapper{
     overflow: hidden;
-    padding-top: 3em;
+    #jukebox & {
+      padding-top: 3em;
+    }
+    #play & {
+      margin-top:-2em;
+      margin-bottom: -3em;
+      text-align: center;
+    }
   }
 
 
   .demo.unentered{
     -ms-transform: translate(0,300px); /* IE 9 */
     -webkit-transform: translate(0,300px); /* Chrome, Safari, Opera */
-    transform: translate(0,-100px);
+    transform: translate(0,300px);
     opacity: 0;
+
+    #play &{
+    -ms-transform: translate(0,600px); /* IE 9 */
+    -webkit-transform: translate(0,600px); /* Chrome, Safari, Opera */
+    transform: translate(0,600px);
+    opacity: 1;
+    }
+
   }
 
   .demo{
-    max-width: 100%;
-    box-shadow: 0 0 30px 0px rgba(0,0,0,0.30);
+    #jukebox & {
+      max-width: 100%;
+      box-shadow: 0 0 15px 0px rgba(0,0,0,0.30);
+    }
+
+    #play & {
+      max-height: 575px;
+      max-width: 80%;
+    }
+
     @extend .animation-1s;
   }
 
 }
 
+#jukebox{
+
+  #features{
+    background: #eee;
+  }
+
+  #guide{
+    background: #333;
+  }
+
+
+  section.content{
+    padding: 2em 0;
+    overflow: hidden;
+
+    h2{
+      font-size: 2.5em;
+      padding: 1em 0;
+    }
+
+    h3{
+      font-size: 1.5em;
+      font-weight: 300;
+      padding: 0.5em 0;
+    }
+
+    .line{
+      margin-top: 1em;
+      margin-bottom: 5em;
+    }
+
+    .last{
+      margin-bottom: 1em;
+    }
+
+    .step-heading{
+      display: table;
+      width: 2.5em;
+      height: 2.5em;
+      position: absolute;
+      left: 1em;
+      top: 0;
+
+      svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      span{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.5em;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: -webkit-gradient(linear, left top, right top, from(#29a5dc), to(#0071b6));
+        background-image: -moz-linear-gradient(center right, #29a5dc 0%, #0071b6 100%);
+      }
+    }
+
+    .step-content{
+      h3{
+        color: #fff;
+      }
+      margin-left: 4.5em;
+    }
+
+  }
+}
+
+#play{
+
+  #description{
+    padding-top: 6em;
+    padding-bottom: 3em;
+    background: #fff;
+
+    h2{
+      font-size: 2.5em;
+      line-height: 1.2em;
+      font-weight: 100;
+      color: #000;
+      margin-bottom: 0.5em;
+    }
+
+    p{
+      line-height: 1.5em;
+      font-weight: 300;
+    }
+
+  }
+}
+
+.thumb{
+  margin-top: 1em;
+  margin-right: 1.5em;
+  border-radius: 0.25em;
+  width: 7em;
+  float: left;
+}
+
+.fill{
+  width: 100%;
+}
+
+.step-illustration{
+  position: relative;
+  text-align: right;
+
+  img{
+    width: 80%;
+  }
+}
+
+#ani1-wrapper{
+
+  #plus-minus{
+    float: left;
+    display: inline-block;
+  }
+
+  #incrementor{
+    background: $blue-accent;
+    width: 5em;
+    height: 5em;
+    border-radius: 1em;
+    float: left;
+    margin-left: 3em;
+    text-align: center;
+    overflow: hidden;
+
+    .number{
+      font-size: 4em;
+      color: #fff;
+      line-height: 1.2em;
+    }
+  }
+
+}
+
+
 /*responsive*/
+
+@media (min-width: 1200px){
+  .content{
+    font-size: 1.08em;
+    line-height: 1.3em;
+  }
+
+  .hero-content{
+    font-size: 1.2em;
+  }
+}
+
+
+@media (max-width: 960px) {
+  section.hero .hero-content p{
+    margin-bottom: 1em;
+  }
+
+  #jukebox{
+    .fill{
+      margin-top: 2em;
+    }
+  }
+}
+
 
 @media (max-width: 767px) {
   #logo, .demo-wrapper, nav{
@@ -130,12 +362,47 @@ section.hero {
     padding-bottom: 1em;
   }
 
-  .demo-wrapper{
-    float: right;
+  section.hero{
+    .demo-wrapper{
+      float: right;
+    }
+
+    .hero-content-wrapper{
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero-content {
+      width: 100%;
+      float: none;
+      margin-top: 0;
+    }
   }
 
-  .hero-content {
-    position: absolute;
+  #play section.hero{
+
+    .demo-wrapper{
+      float: none;
+    }
+
+    .hero-content-wrapper{
+
+      .label{
+        font-size: 0.6em;
+      }
+
+      margin-top: 0;
+
+      p{ font-size: 1.2em; }
+      hr { max-width: 100%; }
+    }
+
+  }
+
+  .thumb{
+    max-height: 5em;
+    margin-bottom: 2em;
+    width: auto;
   }
 }
 

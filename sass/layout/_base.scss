@@ -1,17 +1,14 @@
-$blue-accent: #0099FF;
-$orange-accent: #ff9900;
-
-$base-translucent: rgba(0,0,0,0.25);
-$base-translucent-stronger: rgba(51,51,51,0.9);
-
-$base-text: #666;
-$base-text-focus: #fff;
-
-$nav: #fff;
-
 body {
-  background: white;
+  background: #333;
   color: #999;
+}
+
+@mixin vendor-prefix($property, $arguments...) {
+  -webkit-#{$property}: $arguments;
+  -moz-#{$property}:    $arguments;
+  -ms-#{$property}:     $arguments;
+  -o-#{$property}:      $arguments;
+  #{$property}:         $arguments;
 }
 
 .animation {
@@ -24,10 +21,10 @@ body {
 
 .animation-1s {
   -webkit-transform: translate3d(0, 0, 0);
-  -webkit-transition: all 1s ease-out;
-        -moz-transition: all 1s ease-out;
-        -o-transition: all 1s ease-out;
-        transition: all 1s ease-out;
+  -webkit-transition: all 1.5s ease-out;
+        -moz-transition: all 1.5s ease-out;
+        -o-transition: all 1.5s ease-out;
+        transition: all 1.5s ease-out;
 }
 
 /* clearfixes are oldschool */
@@ -39,20 +36,29 @@ body {
   display: none;
 }
 
+.clear{
+  clear: both;
+}
+
+.overflowable{
+  overflow: visible!important;
+}
+
 .float-gutter{
   padding-right: 15px;
   padding-left: 15px;
 }
 
-@font-face {
-  font-family: 'epsilon-icofonts';
-  src:url('../fonts/epsilon-icofonts.eot?-rgflj8');
-  src:url('../fonts/epsilon-icofonts.eot?#iefix-rgflj8') format('embedded-opentype'),
-    url('../fonts/epsilon-icofonts.woff?-rgflj8') format('woff'),
-    url('../fonts/epsilon-icofonts.ttf?-rgflj8') format('truetype'),
-    url('../fonts/epsilon-icofonts.svg?-rgflj8#epsilon-icofonts') format('svg');
-  font-weight: normal;
-  font-style: normal;
+
+.valign-wrapper{
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.valign{
+  display: table-cell;
+  vertical-align: middle;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -77,6 +83,150 @@ body {
 }
 .icon-a:before {
   content: "\e602";
+}
+
+a.button{
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.8em;
+  padding: 0.75em;
+  border: 1px solid;
+  display: inline-block;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  line-height: 1em;
+
+  &.dark{
+    color: #fff;
+    border-color: #222;
+    &:hover{
+      background: #222;
+    }
+  }
+
+  &.large{
+    padding: 0.8em;
+    font-size: 1.2em;
+  }
+
+  &.inverted{
+    border-color: #fff;
+    color: #fff;
+
+    &.grey{
+      border-color: $grey;
+      color: $grey;
+    }
+
+    &.orange{
+      border-color: $orange-accent;
+      color: $orange-accent;
+    }
+
+    &:hover{
+      text-decoration: none;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+
+  }
+
+  i {
+    position: absolute;
+    font-size: 1.5em;
+    right: 0;
+    bottom: 0.25em;
+  }
+
+  &.download, &.link{
+    padding-right: 3.5em;
+  }
+
+  &.link{
+    i{
+      bottom: 0.35em;
+    }
+  }
+
+}
+
+footer{
+  background: #555;
+
+  .logo{
+    padding: 1em 0
+  }
+
+  .social-bar{
+    padding: 0.5em 0;
+    text-align: center;
+    font-size: 2em;
+    background: #000;
+
+    a{
+      color: #999;
+      margin: 0 0.5em;
+      &:hover{
+        color: #fff;
+      }
+    }
+
+  }
+
+  nav{
+    padding-top: 2em;
+    text-align: center;
+    .button{
+      @extend .animation;
+      width: 10em;
+      border: 1px solid $grey;
+      color: $grey;
+      margin: 0 1em;
+      text-transform: none;
+      padding: 0.8em;
+      font-weight: 300;
+
+      &:hover{
+        color: #fff;
+        border-color: #fff;
+        text-decoration: none;
+      }
+
+      &.active{
+        color: #fff;
+        background: #444;
+        border-color: #444;
+
+        &:hover{
+          background: #333;
+        }
+      }
+
+    }
+  }
+
+  .trademark{
+    padding: 3em 0;
+    text-align: center;
+    span{
+      &.white, a{
+        color: #fff;
+      }
+      text-transform: uppercase;
+      font-size: 0.7em;
+    }
+  }
+}
+
+.compatibility{
+  font-size: 0.7em;
+  font-weight: 300;
+  margin-top: 1em;
+  color: #fff;
+
+  .platform{
+    opacity: 0.6;
+  }
 }
 
 @media (max-width: 767px) {

@@ -1,0 +1,31 @@
+$blue-accent: #0099FF;
+$orange-accent: #ff9900;
+
+$base-translucent: rgba(0,0,0,0.25);
+$base-translucent-stronger: rgba(51,51,51,0.9);
+
+$base-text: #666;
+$base-text-focus: #fff;
+
+$nav: #fff;
+
+$grey: #999;
+$darker-grey: #666;
+$bg-grey: #333;
+
+
+/**
+ * Epsilon CSS
+ */
+
+/*fonts */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+/*scss partials*/
+@import "layout/type";
+@import "layout/reset";
+@import "layout/base";
+@import "layout/grid";
+@import "components/page";
+@import "lib/mixins";
+

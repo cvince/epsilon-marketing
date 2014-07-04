@@ -1,7 +1,100 @@
 <%- include header.ejs %>
 
-<div class="hero">
+<section class="hero">
   <%- include nav.ejs %>
-</div>
+
+  <div class="container">
+    <div class="row overflowable">
+      <div class="col-md-5 hero-content-wrapper">
+        <div class="hero-content">
+          <h1>Epsilon Play</h1>
+          <hr>
+          <p>The music app that lets you <br>suggest what's playing next.</p>
+          <p>You're the DJ</p>
+          <div class="label">Use the web app at</div>
+
+          <a href="epsilon.mu/login" class="button inverted">
+            epsilon.mu
+          </a>
+
+          <div class="label">or download the app</div>
+
+          <div class="store-icons">
+            <img src="/img/apple-store.png"><img src="/img/gplay-store.png">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 demo-wrapper">
+        <img class="demo unentered" src="/img/play-demo.png">
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</section>
+
+<section id="description" class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <h2>Make the world dance to your tune</h2>
+        <p>
+          Wether it’s at personal party, a participating gym, event, or shopping mall, you can use Epsilon Play to vote on what’s playing next in order to make sure your song is heard. Don’t like what’s playing? Downvote the next few songs to push them to the back of the playlist
+        </p>
+      </div>
+      <div class="col-md-6 col-md-offset-1" id="ani1-wrapper">
+        <svg id="plus-minus" version="1.1"
+           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+           x="0px" y="0px" width="171px" height="67px" viewBox="0 0 171 67" enable-background="new 0 0 171 67" xml:space="preserve">
+        <defs>
+        </defs>
+        <g>
+          <path id="plus-ani" fill="#0097FF" d="M32.7,0v32.7h31.5v1.4H32.7V67h-1.4V34.1H0v-1.4h31.3V0H32.7z"/>
+        </g>
+        <g>
+          <path id="minus-ani" fill="#0097FF" d="M171,31.4v1.5h-54.9v-1.5H171z"/>
+        </g>
+        </svg>
+        <div id="incrementor">
+          <div class="number">
+            1
+          </div>
+          <div class="number">
+            2
+          </div>
+          <div class="number">
+            3
+          </div>
+          <div class="number">
+            4
+          </div>
+          <div class="number">
+            3
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6"></div>
+      <div class="col-md-5">
+        <h2>Bring the sounds around you to your device</h2>
+        <p>
+          If you like what you’re hearing at a particular place, and they’ve enabled streaming rights on their <a href="/jukebox">Epsilon Jukebox</a>, you can plug right into your Epsilon Play app and stream it through your earphones. That way you get to experience it up-close and personal.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">
+        <h2>Listen to, and share your own music wherever you go</h2>
+        <p>
+          If you’ve installed the <a href="/jukebox">Epsilon Jukebox</a> as well as the Epsilon Play app, you can stream your own music library on the go, or share it with other people. If this sounds like something cool, click the button to the right to download Epsilon Jukebox on your Mac, PC, or Linux computer.
+        </p>
+      </div>
+      <div class="col-md-6 col-md-offset-1"></div>
+    </div>
+  </div>
+
+</section>
 
 <%- include footer.ejs %>
